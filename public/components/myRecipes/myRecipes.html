@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 item-container" ng-repeat="item in myRecipes track by $index">
+            <a href="#/thisRecipe"><img src="{{item.image_url}}" class="img-responsive hot-items" alt="" ng-click="getThisRecipe($index)"></a>
+            <button class="btn btn-danger add_button" ng-click="deleteRecipeItem($index)"><i class="glyphicon glyphicon-trash"></i></button>
+            <p class="photo-description">{{item.title}}</p>
+        </div>
+    </div>
+</div>

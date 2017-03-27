@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RecipeApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="container-fluid navbar navbar-fixed-top">
+        <div class="row">
+            <div class="col-sm-4 title_container">
+                <h1 class='pull-left'><span class="title_font"><a href="#/home">Foodie</a></span></h1>
+            </div>
+            <div class="col-sm-4 pull-right navigation_container">
+                <ul>
+                    <li class="nav-options"><a href="#/home">Home</a></li>
+                    <li class="nav-options"><a href="#/topRated">Hot Today</a></li>
+                    <li class="nav-options"><a href="#/myRecipes">My Recipes</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4" ng-controller="MainController">
+                <form action="">
+                    <div class="has-feedback has-feedback-right">
+                        <input type="text" placeholder="Search by ingredient or keyword here..." class="form-control search_bar" ng-model="newSearch">
+                        <i class='glyphicon glyphicon-search form-control-feedback'></i>
+                    </div>
+                    <button class="btn" style="visibility: hidden" ng-click="searchFood(newSearch)"></button>
+                </form>
+            </div>
+
+        </div>
+    </nav>
+
+    <ng-view></ng-view>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+    <!-- Route -->
+    <script src="app.js"></script>
+
+    <!-- services & controllers -->
+    <script src="components/services/getFood.js"></script>
+    <script src="components/services/transferFood.js"></script>
+    <script src="components/home/home.js"></script>
+
+    <script src="components/topRated/topRated.js"></script>
+    <script src="components/thisRecipe/thisRecipe.js"></script>
+    <script src="components/myRecipes/myRecipes.js"></script>
+    <script src="components/search/search.js"></script>
+</body>
+
+</html>

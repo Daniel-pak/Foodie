@@ -1,0 +1,20 @@
+<div class="container recipe_container">
+    <div class="col-sm-6">
+        <h1>{{thisRecipe.title}}</h1>
+        <ul>
+            <li ng-repeat="ingredient in thisRecipe.ingredients">{{ingredient}}</li>
+        </ul>
+        <p><i>Published by {{thisRecipe.publisher}}</i></p>
+    </div>
+    <div class="col-sm-6">
+        <img src="{{thisRecipe.image_url}}" class="img-responsive this-recipe-photo" alt="">
+        <p>For detailed instructions please click
+            <a href="{{thisRecipe.source_url}}" target="_blank">
+                <button class='btn btn-primary btn-sm'>Here</button>
+            </a>
+        </p>
+        <button class="btn btn-success" ng-click="addToFavorites()">Add to my recipes!</button>
+        <button class="btn btn-warning" ng-click="tweetThis()">Tweet this recipe!</button>
+    </div>
+
+</div>

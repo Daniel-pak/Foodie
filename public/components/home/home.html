@@ -1,0 +1,42 @@
+<div class="container">
+    
+</div>
+<!--Home Page-->
+<div class="container-fluid" ng-show="clicked === false">
+    <div class="row">
+        <div class="col-sm-6 title_photos text-center" ng-click="clicked = !clicked; getFoodType('breakfast')">
+            <img class="home_photos" src="photos/carissa-gan-66378.jpg" class="img-responsive" alt="">
+            <h3 class="photo_text">Breakfast</h3>
+        </div>
+        <div class="col-sm-6 title_photos text-center" ng-click="clicked = !clicked; getFoodType('lunch')">
+            <img class="home_photos" src="photos/kazuend-33925.jpg" alt="">
+            <h3 class="photo_text">Lunch</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 title_photos text-center" ng-click="clicked = !clicked; getFoodType('dinner')">
+            <img class="home_photos" src="photos/adam-jaime-119568.jpg" alt="">
+            <h3 class="photo_text">Dinner</h3>
+        </div>
+        <div class="col-sm-6 title_photos text-center" ng-click="clicked = !clicked; getFoodType('dessert')">
+            <img class="home_photos" src="photos/tatiana-lapina-6807.jpg" alt="">
+            <h3 class="photo_text">Dessert</h3>
+        </div>
+    </div>
+</div>
+
+    <!-- ng-show on category click -->
+    <div class="container-fluid" ng-hide="clicked == false">
+        <div class="row">
+            <button ng-click="clicked = !clicked; resetFoodCategory()" class="btn btn-default"><i class="glyphicon glyphicon-arrow-left"></i> Back to the home page!</button>
+            <h4 class="pull-right category_header">Explore your options!</h4>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 item-container" ng-repeat="item in categoryItems track by $index">
+                <!--            <p class="photo_description">{{item.title}}</p>-->
+                <a href="#/thisRecipe"><img src="{{item.image_url}}" class="img-responsive hot-items" alt="" ng-click="getThisRecipe($index)"></a>
+                <button class="btn add_button" ng-click="addToFavorites($index)">+</button>
+                <p class="photo-description">{{item.title}}</p>
+            </div>
+        </div>
+    </div>
