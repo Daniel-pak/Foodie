@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 app.use(require("./recipeRoutes"));
 
 
-app.listen(8080, function() { 
+app.listen(8100, function() { 
     console.log("Recipe up and fully functioning --- Ready to grab your information! (>'-')>")
 })
