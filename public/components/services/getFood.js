@@ -3,31 +3,31 @@ angular.module("RecipeApp")
 .service("GetFood", ["$http", function ($http) {
 
     this.topRatedFood = function () {
-        return $http.get("/food");
+        return $http.get("foodie/food");
     }
     
     this.thisRecipe = function(rId) { 
-        return $http.get(`/food/${rId}`);
+        return $http.get(`foodie/food/${rId}`);
     }
     
     this.returnTypeRecipes = function(type) { 
-        return $http.get(`/home/${type}`);
+        return $http.get(`foodie/home/${type}`);
     }
     
     this.addRecipeToMyList = function(food) { 
-        return $http.post('/myRecipes', food);
+        return $http.post('foodie/myRecipes', food);
     }
     
     this.myRecipes = function() { 
-        return $http.get("/myRecipes");
+        return $http.get("foodie/myRecipes");
     }
     
     this.deleteThisRecipe = function(id) { 
-        return $http.delete(`/myRecipes/${id}`)
+        return $http.delete(`foodie/myRecipes/${id}`)
     }
     
     this.getSearchedFood = function(searchWord) {
-        return $http.get(`/search/${searchWord}`)
+        return $http.get(`foodie/search/${searchWord}`)
     }
     
 }])
